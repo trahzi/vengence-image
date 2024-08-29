@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const fileName = `${uniqueString}-${file.name}`;
             const newPagePath = `generated-pages/${uniqueString}.html`;
 
-            // Save the image in the "uploads/" folder (this requires backend processing)
-            // For now, we'll simulate this step.
+            // Save the image in the "images/" folder
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = () => {
@@ -32,31 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         <link rel="stylesheet" href="../styles.css">
                     </head>
                     <body>
-                        <header>
-                            <h1>Vengence</h1>
-                            <p>Your uploaded image</p>
-                        </header>
-                        
                         <main>
                             <div class="image-container">
                                 <img src="${imageData}" alt="Uploaded Image">
                             </div>
                         </main>
-
-                        <footer>
-                            <p>&copy; 2024 Vengence. All rights reserved.</p>
-                        </footer>
                     </body>
                     </html>
                 `;
 
-                // Simulate saving the new page (this requires backend processing)
-                uploadStatus.textContent = `Image uploaded successfully!`;
-                
-                // Instead of saving the file, simulate the file generation and redirect
+                // Simulate saving the new HTML page (this would need backend processing)
                 const newWindow = window.open();
                 newWindow.document.write(newPageContent);
                 newWindow.document.close();
+
+                // Display the link to the new page
+                uploadStatus.innerHTML = `Image uploaded successfully!<br>
+                                          <a href="${newPagePath}" target="_blank">View your image</a>`;
             };
         } else {
             uploadStatus.textContent = "Please select an image to upload.";
@@ -64,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function generateUniqueString(length) {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let result = '';
         const charactersLength = characters.length;
         for (let i = 0; i < length; i++) {
