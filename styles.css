@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Header styling */
+/* Header Styling */
 header {
     text-align: center;
     padding: 20px;
@@ -61,33 +61,27 @@ nav ul li a:hover::before {
     transform: scaleX(1);
 }
 
-/* Main Section Styling */
+/* Section Styling */
 .section {
     padding: 80px 0;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: popUp 1s forwards;
+    text-align: center;
+}
+
+.home {
+    background: #111;
+}
+
+.commands {
+    background: #222;
+}
+
+.support {
+    background: #333;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbowText 10s ease-in-out infinite;
-}
-
-p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 30px;
 }
 
 /* Button Styling */
@@ -101,6 +95,7 @@ p {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 10px;
 }
 
 .button:hover {
@@ -108,7 +103,6 @@ p {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Rainbow Button Effect */
 .rainbow-button {
     background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
     color: #fff;
@@ -116,42 +110,29 @@ p {
     animation: rainbowButton 5s ease-in-out infinite;
 }
 
-/* Command Boxes */
+/* Command Boxes Styling */
 .commands-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
     justify-content: center;
+    gap: 20px;
 }
 
 .command-box {
-    background: #333;
-    border: 2px solid #444;
-    border-radius: 8px;
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.command-box:hover {
     background: #444;
-    border-color: #555;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .command-box h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.3rem;
-    color: #e0e0e0;
+    margin-top: 0;
+    font-size: 1.5rem;
 }
 
 .command-box p {
-    margin: 0;
     font-size: 1rem;
-    color: #b0b0b0;
 }
 
 /* Footer Styling */
@@ -164,17 +145,6 @@ footer {
 }
 
 /* Animations */
-@keyframes popUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 @keyframes rainbowText {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
