@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vengence - Image Hosting</title>
+    <title>Your Discord Bot - Professional Website</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Vengence</h1>
-        <p>Upload and share your images easily.</p>
+        <h1>Your Discord Bot</h1>
+        <nav>
+            <ul>
+                <li><a href="#add-bot">Add Bot</a></li>
+                <li><a href="#support">Support</a></li>
+                <li><a href="#commands">Commands</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <main>
-        <div class="upload-section">
-            <h2>Upload Your Image</h2>
-            <form id="uploadForm">
-                <input type="file" id="fileInput" accept="image/*" required>
-                <button type="submit">Upload</button>
-            </form>
-            <p id="uploadStatus"></p>
+
+    <section id="add-bot" class="section">
+        <div class="container">
+            <h2>Add Bot</h2>
+            <p>Invite our Discord bot to your server by clicking the button below.</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot&permissions=8" class="button rainbow-button">Invite Bot</a>
         </div>
-    </main>
+    </section>
+
+    <section id="support" class="section">
+        <div class="container">
+            <h2>Support</h2>
+            <p>If you need help, join our support server.</p>
+            <a href="https://discord.gg/YOUR_SUPPORT_SERVER" class="button rainbow-button">Join Support Server</a>
+        </div>
+    </section>
+
+    <section id="commands" class="section">
+        <div class="container">
+            <h2>Commands</h2>
+            <p>Check out the list of commands our bot offers.</p>
+            <a href="#commands-list" class="button rainbow-button">View Commands</a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Vengence. All rights reserved.</p>
+        <p>&copy; 2024 Your Discord Bot. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
