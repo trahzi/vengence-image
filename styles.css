@@ -1,88 +1,122 @@
-/* styles.css */
-
-/* Basic reset and body styling */
+/* Base Styles */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #282c34;
-    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
 /* Header styling */
 header {
-    background: #1e1e1e;
-    color: #f4f4f4;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 10s ease-in-out infinite;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    margin: 0;
-    text-align: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 1rem;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #f4f4f4;
     text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
     font-weight: bold;
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: #ff6f61;
-    text-decoration: underline;
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
+    bottom: -5px;
+    left: 0;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
-/* Section styling */
+nav ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+/* Main Section Styling */
 .section {
-    padding: 2rem 1rem;
-    margin-top: 4rem;
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: popUp 1s forwards;
 }
 
 .container {
-    max-width: 1200px;
+    width: 80%;
     margin: 0 auto;
-    padding: 0 1rem;
+    text-align: center;
 }
 
-/* Button styling */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowText 10s ease-in-out infinite;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
 .button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 15px 30px;
+    font-size: 1.2rem;
     color: #fff;
-    background: linear-gradient(90deg, #ff0084, #ff8c00, #f5ff00, #00d4ff, #ff00e0);
+    background-color: #444;
     border: none;
     border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background 0.4s, transform 0.2s;
     cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .button:hover {
-    background: linear-gradient(90deg, #ff8c00, #ff00e0, #00d4ff, #f5ff00, #ff0084);
-    transform: scale(1.05);
+    background-color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Command box styling */
+/* Rainbow Button Effect */
+.rainbow-button {
+    background: linear-gradient(90deg, #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #8800ff);
+    color: #fff;
+    background-size: 400% 400%;
+    animation: rainbowButton 5s ease-in-out infinite;
+}
+
+/* Command Boxes */
 .commands-container {
     display: flex;
     flex-wrap: wrap;
@@ -98,13 +132,14 @@ nav ul li a:hover {
     width: 100%;
     max-width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .command-box:hover {
     background: #444;
     border-color: #555;
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .command-box h3 {
@@ -119,13 +154,35 @@ nav ul li a:hover {
     color: #b0b0b0;
 }
 
-/* Footer styling */
+/* Footer Styling */
 footer {
-    background: #1e1e1e;
-    color: #f4f4f4;
-    padding: 1rem;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Animations */
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbowButton {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
