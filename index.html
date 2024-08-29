@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vengence - Image Hosting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Vengence</h1>
+        <p>Your place for secure and fast image hosting.</p>
+    </header>
+    
+    <main>
+        <div class="upload-section">
+            <h2>Upload Your Image</h2>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadStatus"></p>
+        </div>
+        
+        <div class="gallery-section">
+            <h2>Your Uploaded Images</h2>
+            <div id="gallery"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vengence. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
